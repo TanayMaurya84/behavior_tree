@@ -1,0 +1,28 @@
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+
+        <Sequence name="root_sequence">
+            
+            <Fallback name="fallback1">
+                <Ball_Found name="ball_found" attempt="{attempt}" />
+                <Find_Ball name="find_ball" attempt="{attempt}" />
+            </Fallback>
+            <Fallback name="fallback2">
+                <Ball_Approached name="ball_approached" distance_from_ball="{distance_from_ball}" />
+                <Approach_Ball name="approach_ball" distance_from_ball="{distance_from_ball}" />
+            </Fallback>
+            <Fallback name="fallback3">
+                <Ball_Grasped name="grasped_ball" trying="{trying}" />
+                <Grasp_Ball name="grasp_ball" trying="{trying}" />
+            </Fallback>
+            <Fallback name="fallback4">
+                <Bin_Opened name="bin_opened" />
+                <Open_Bin name="open_bin"  />
+            </Fallback>
+            <Fallback name="fallback5">
+                <Ball_Placed name="ball_dropped"  />
+                <Place_Ball name="drop_ball" />
+            </Fallback>
+        </Sequence>
+    </BehaviorTree>
+</root>
